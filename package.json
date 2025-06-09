@@ -1,0 +1,14 @@
+{
+  "name": "cljs-ascii",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "watch": "npx shadow-cljs watch app",
+    "release": "npx shadow-cljs release app && rm -rf $(pwd)/public/js/cljs-runtime",
+    "deploy": "npm run release && npx netlify deploy --prod --dir $(pwd)/public --site $NETLIFY_SITE_ID --auth $NETLIFY_TOKEN"
+  },
+  "devDependencies": {
+    "netlify": "22.1.3",
+    "shadow-cljs": "3.1.5"
+  }
+}

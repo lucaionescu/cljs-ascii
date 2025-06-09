@@ -1,0 +1,16 @@
+{:source-paths ["src"]
+ :dev-http {8020 "public"}
+ :builds {:app {:target :browser
+                :output-dir "public/js"
+                :asset-path "/js"
+                :module-loader true
+                :modules {:main {:entries [main.index]
+                                 :init-fn main.index/init}
+                          :sketch-01 {:entries [main.sketches.sketch-01]
+                                      :depends-on #{:main}}
+                          :sketch-02 {:entries [main.sketches.sketch-02]
+                                      :depends-on #{:main}}
+                          :sketch-03 {:entries [main.sketches.sketch-03]
+                                      :depends-on #{:main}}
+                          }
+                :devtools {:hud false}}}}
